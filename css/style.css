@@ -27,14 +27,6 @@ body {
     align-items: center;
 }
 
-.banner-info {
-    /* width: 50%; */
-}
-
-.banner-image{
-    /* width: 50%; */
-}
-
 .banner-title {
     font-family: 'Poppins', sans-serif;
     font-weight: 700;
@@ -144,4 +136,29 @@ body {
 
 .time {
     margin-right: 30px;
+}
+
+/* Footer Section */
+footer {
+    background-color: #161616;
+    color: #ffffff;
+    font-weight: 400;
+    text-align: center;
+    padding: 130px 0px;
+    margin-top: 130px;
+}
+
+footer hr {
+    opacity: 0.1;
+    margin: 50px 0px;
+}
+
+footer ul {
+    margin: 0px;
+    padding: 0px;
+    list-style-type: none;
+    display: flex;
+    width: 60%;
+    justify-content: space-evenly;
+    margin: 0px auto;
 }
