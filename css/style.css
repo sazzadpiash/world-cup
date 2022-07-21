@@ -1,5 +1,8 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 /* Universal CSS */
+:root {
+    --main: #1e90ff;
+  }
 *  {
     margin: 0px;
     padding: 0px;
@@ -56,12 +59,17 @@ img {
 
 .banner-btn {
     color: #ffffff;
-    background-color: rgb(185, 0, 0);
+    background-color: var(--main);
     padding: 15px 26px;
     border: none;
     border-radius: 5px;
     font-size: 20px;
+    cursor: pointer;
 }
+
+.banner-btn:hover{
+    animation: rubberBand linear 1s;
+  }
 
 .banner-image img {
     width: 581px;
@@ -74,6 +82,11 @@ img {
     grid-template-columns: 312px 1fr;
     grid-column-gap: 24px;
 }
+
+.contents .banner-btn{
+    display: none;
+}
+
 .side-menu  {
     width: 312px;
     height: 312px;
@@ -86,16 +99,28 @@ img {
     border-radius: 10px;
 }
 
-.side-menu button {
+/* .side-menu button {
     height: 64px;
     border-radius: 10px;
     background-color: #ffffff;
     border: none;
     font-size: 20px;
+    display: none;
+} */
+.side-menu a {
+    text-decoration: none;
+    color: #161616;
+    width: 100%;
+    text-align: center;
+    background: white;
+    font-size: 20px;
+    padding: 18px 0px;
+    border-radius: 10px;
+    transition: 0.5s;
 }
 
-.active {
-    background-color: rgb(185, 0, 0) !important;
+.active, .side-menu a:hover {
+    background-color: var(--main) !important;
     color: #ffffff !important;
 }
 
@@ -150,6 +175,48 @@ img {
     margin-right: 30px;
 }
 
+/* all match paeg */
+.all-matches {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.match {
+    margin: 24px 12px;
+    padding: 53px 30px;
+    margin-top: 0px;
+    border: 1px solid #e8e8e8;
+    text-align: center;
+    border-radius: 10px;
+}
+
+.match .flags {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.match h3 {
+    font-weight: 600;
+    margin: 20px 0px 10px;
+}
+
+.match p {
+    margin: 0px;
+    color: #4d4d4d;
+    font-size: 16px;
+    font-weight: 300;
+}
+
+.flags img {
+    width: auto;
+}
+
+.flags span {
+    margin: 0px 10px;
+    font-weight: 500;
+}
+
 /* Footer Section */
 footer {
     background-color: #161616;
@@ -182,6 +249,60 @@ footer  ul li {
     margin: 10px;
 }
 
+footer .social-media {
+    font-size: 25px;
+    color: #ffffff;
+    text-decoration: none;
+    margin-top: 30px;
+}
+
+footer .social-media a {
+    color: #ffffff;
+    padding: 7px;
+}
+
+footer .social-media a:hover {
+    color: var(--main);
+}
+
+/* animation */
+
+@keyframes rubberBand {
+    from {
+      transform: scale3d(1, 1, 1);
+    }
+  
+    30% {
+      transform: scale3d(1.25, 0.75, 1);
+    }
+  
+    40% {
+      transform: scale3d(0.75, 1.50, 1);
+    }
+  
+    50% {
+      transform: scale3d(1.15, 0.85, 1);
+    }
+  
+    65% {
+      transform: scale3d(.95, 1.05, 1);
+    }
+  
+    75% {
+      transform: scale3d(1.05, .95, 1);
+    }
+  
+    to {
+      transform: scale3d(1, 1, 1);
+    }
+  }
+  
+  /* .rubberBand {
+    -webkit-animation-name: rubberBand;
+    animation-name: rubberBand;
+  }
+   */
+
 /* responsive css */
 @media screen and (max-width: 1400px) {
     .container {
@@ -194,6 +315,12 @@ footer  ul li {
     .banner-title {
         font-size: 40px;
         line-height: 45px;
+    }
+    .flags img {
+        width: 100%;
+    }
+    .all-matches {
+        grid-template-columns: repeat(2, 1fr);
     }
     
   }
@@ -219,6 +346,12 @@ footer  ul li {
 
 
   @media screen and (max-width: 768px) and (min-width: 481px) {
+    .contents .banner-btn{
+        display: inline;
+        width: 131px;
+        margin: 50px auto 0px;
+    }
+
     .banner-section {
         padding: 33px 30px 0px 55px;
         margin-bottom: 40px;
@@ -257,6 +390,10 @@ footer  ul li {
     }
 
     .main-content {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .all-matches {
         grid-template-columns: repeat(2, 1fr);
     }
 
@@ -312,9 +449,26 @@ footer  ul li {
         grid-template-columns: 1fr;
     }
 
+    .all-matches {
+        grid-template-columns: 1fr;
+    }
+
     footer {
         margin-top: 70px;
         padding: 70px 0px;
+    }
+    
+    footer ul {
+        margin: 0px;
+        padding: 0px;
+        list-style-type: none;
+        width: 80%;
+        margin: auto;
+        display: block;
+    }
+
+    footer  ul li {
+        margin: 20px 0px;
     }
 
   }
