@@ -117,7 +117,7 @@ img {
     padding: 18px 0px;
     border-radius: 10px;
     transition: 0.5s;
-    border: 1px solid #e8e8e8;
+    /* border: 1px solid #e8e8e8; */
 }
 
 .active, .side-menu a:hover {
@@ -386,7 +386,7 @@ footer .social-media a:hover {
         grid-column-gap: 22px;
     }
 
-    .side-menu button {
+    .side-menu a {
         border: 1px solid #e8e8e8;
     }
 
