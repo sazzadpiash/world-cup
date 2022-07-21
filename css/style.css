@@ -34,6 +34,10 @@ img {
     align-items: center;
 }
 
+.banner-section:hover img  {
+    animation: zoom 1s linear 1;
+}
+
 .banner-info {
     width: 50%;
 }
@@ -267,6 +271,17 @@ footer .social-media a:hover {
 }
 
 /* animation */
+@keyframes zoom {
+    0% {
+      transform: scale(0, 0);
+    }
+    75% {
+      transform: scale(1.5, 1.5);
+    }
+    100% {
+      transform: scale(1, 1);
+    }
+  }
 
 @keyframes rubberBand {
     from {
